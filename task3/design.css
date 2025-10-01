@@ -1,0 +1,121 @@
+/* Body styling */
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #fff;
+}
+
+/* Game container */
+.game-container {
+  background: rgba(255,255,255,0.05);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+  text-align: center;
+  min-width: 350px;
+}
+
+h1 {
+  margin-bottom: 20px;
+  font-size: 36px;
+  letter-spacing: 2px;
+}
+
+/* Tic-Tac-Toe board */
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-template-rows: repeat(3, 100px);
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.cell:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Gradient circles for O */
+.o {
+  background: conic-gradient(#ff6a00, #ee0979);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Gradient X */
+.x {
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Reset button */
+.reset-btn {
+  padding: 10px 25px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  background-color: #ff5722;
+  color: white;
+  transition: 0.3s;
+}
+
+.reset-btn:hover {
+  opacity: 0.85;
+  transform: scale(1.05);
+}
+
+/* Winner popup */
+.winner-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  padding: 30px 50px;
+  border-radius: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  transition: transform 0.3s ease;
+  z-index: 100;
+}
+
+.winner-popup.show {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+@media (max-width: 400px) {
+  .board {
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(3, 80px);
+    gap: 10px;
+  }
+
+  .cell {
+    font-size: 40px;
+  }
+}
